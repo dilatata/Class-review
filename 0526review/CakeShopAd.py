@@ -1,14 +1,14 @@
 # 모듈 내용 선언하기
 
-from review0526_CakeShopInfo import Cakeshop 
-from review0526_CakeCustomerInfo import Cakecustomer
+from CakeShopInfo import Cakeshop 
+from CakeCustomerInfo import Cakecustomer
 
 # 케이크와 고객 연동 class 생성
 class cake_customer:
 
     def cake_data():
         cake_d = []
-        with open('review0526_cakeshop.csv', 'r', encoding='utf-8') as f1:
+        with open('cakeshop.csv', 'r', encoding='utf-8') as f1:
             data = f1.readlines()
             # print(data) -> ['Cheese Cake, 25000\n', 'Chocolate Cake, 26000\n', 'Icecream Cake, 27000\n', 'Customizing Cake, 35000']
             for cake in data:
@@ -26,7 +26,7 @@ class cake_customer:
    
     def cust_data():
         cust_d = []
-        with open('review0526_cakecustomer.csv', 'r', encoding='utf-8') as f2:
+        with open('cakecustomer.csv', 'r', encoding='utf-8') as f2:
             data2 = f2.readlines()
             for cust in data2:
                 ec = cust.split(',')
@@ -37,12 +37,12 @@ class cake_customer:
         all_cake = []
         all_cust = []
 
-        with open('review0526_cakeshop.csv', 'r', encoding='utf-8') as f1:
+        with open('cakeshop.csv', 'r', encoding='utf-8') as f1:
             data = f1.readlines()
             for cake in data: 
                 all_cake.append(cake.split(','))
 
-        with open('review0526_cakecustomer.csv', 'r', encoding='utf-8') as f2:
+        with open('cakecustomer.csv', 'r', encoding='utf-8') as f2:
             data2 = f2.readlines()
             for cust in data2:
                 all_cust.append(cust.strip('\n').split(','))
